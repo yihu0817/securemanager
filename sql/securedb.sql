@@ -12,9 +12,7 @@ File Encoding         : 65001
 
 Date: 2017-06-05 17:18:01
 */
-
 SET FOREIGN_KEY_CHECKS=0;
-
 -- ----------------------------
 -- Table structure for `function`
 -- ----------------------------
