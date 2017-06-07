@@ -49,6 +49,8 @@ public class SignOnFilter implements Filter {
 			index = uri.lastIndexOf("/");
 			uri = uri.substring(index+1);
 		}
+		
+
 		if (isNonProtected(uri) == false) // 如果配置文件属性non-protected.uri（不处理uri地址）中不包含请求uri,则执行下面判继
 		{
 
@@ -115,6 +117,9 @@ public class SignOnFilter implements Filter {
 	 * @return
 	 */
 	private boolean isNonProtected(String uri) {
+		if(uri.endsWith(".css") || uri.endsWith(".png") || uri.endsWith(".js") || uri.endsWith(".jpg")){
+			return true;
+		}
 		return (nonProtectedUris.get(uri) != null);
 	}
 
