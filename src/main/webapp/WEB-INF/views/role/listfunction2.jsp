@@ -51,7 +51,7 @@
 							%>
 						</c:if>
 					</c:forEach> 
-					<br>
+	
 					<%
 						if (z == 1) {
 					%>
@@ -72,7 +72,8 @@
 			<tr>
 				<td>&nbsp;</td>
 				<td colspan="3"><input name="submit1" type="submit" value="提交" />
-					<input name="submit2" type="reset" value="重置" /></td>
+					<input name="submit2" type="reset" value="重置" />
+				</td>
 			</tr>
 		</table>
 	</form>

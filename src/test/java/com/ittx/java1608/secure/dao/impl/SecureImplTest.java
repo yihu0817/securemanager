@@ -11,9 +11,7 @@
 //import com.ittx.java1608.secure.model.Function;
 //import com.ittx.java1608.secure.model.Module;
 //import com.ittx.java1608.secure.model.Role;
-//import com.ittx.java1608.secure.model.User;
-//import com.ittx.java1608.secure.utils.Configes;
-//import com.ittx.java1608.secure.utils.Util;
+//import com.ittx.java1608.secure.utils.Utils;
 //
 //public class SecureImplTest {
 //	private SecureDao secureDao;
@@ -57,13 +55,20 @@
 //			System.out.println(m.getModuleName());
 //		}
 //	}
+//	
+//	@Test
+//	public void testUpdateModuleById(){
+//		Module module = secureDao.getModuleById(1);
+//		module.setModuleName("模块功能");
+//		secureDao.updateModuleById(module);
+//	}
 //
 //	@Test
 //	public void testGetModuleById() {
 //		Module module = secureDao.getModuleById(1);
 //		System.out.println(module.getModuleName());
 //
-//		List<Function> functionLists = Util.setToList(module.getFunctionSets());
+//		List<Function> functionLists = Utils.setToList(module.getFunctionSets());
 //		for (Function f : functionLists) {
 //			System.out.println(f.getFunctionCode() + "    " + f.getFunctionDescrition());
 //		}
@@ -91,20 +96,7 @@
 //		}
 //	}
 //	
-//	@Test
-//	public void testAddUser(){
-//		User user = new User("admin","123",Configes.CHECK_STATE_NO);
-//		secureDao.addUser(user);
-//	}
 //	
-//	@Test
-//	public void testCheckUser(){
-//		Role role = secureDao.getRoleById(1);
-//		User user = secureDao.getUserById(1);
-//		user.setState(Configes.CHECK_STATE_YES);
-//		user.setRole(role);
-//		secureDao.checkUser(user);
-//	}
 //	
 //	
 //}

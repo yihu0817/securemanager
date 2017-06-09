@@ -39,7 +39,7 @@
 		</div>
 
 		<h2>
-			<span class="icon-user"></span>基本设置
+			<span class="icon-user"></span>用户管理
 		</h2>
 		<ul style="display: block">
 			<li><a href="register" target="right"><span
@@ -69,6 +69,19 @@
 			<li><a href="role/listrole" target="right"><span
 					class="icon-caret-right"></span>角色管理</a></li>
 		</ul>
+		
+		
+		<!-- 菜品管理 -->
+		<h2>
+			<span class="icon-user"></span>菜品管理
+		</h2>
+		<ul style="display: block">
+			<li><a href="module/listmodule" target="right"><span
+					class="icon-caret-right"></span>菜品类型</a></li>
+			<li><a href="role/listrole" target="right"><span
+					class="icon-caret-right"></span>菜品详情</a></li>
+		</ul>
+		
 	</div>
 	<script type="text/javascript">
 		$(function() {

@@ -6,53 +6,45 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet"
+	href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script
+	src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
 </head>
 <body>
 	<h3>用户信息管理</h3>
-	<table width="80%" border="0" cellpadding="2" cellspacing="2"
-		bgcolor="#cccccc">
+	<table class="table table-striped table-bordered table-hover">
 		<tr>
-			<td width="10%"><div align="center">序号</div></td>
-			<td width="30%"><div align="center">用户名</div></td>
-			<td width="20%"><div align="center">密码</div></td>
-			<td width="20%"><div align="center">审核状态</div></td>
-			<td width="20%"><div align="center">操作</div></td>
+			<td>序号</td>
+			<td>用户名</td>
+			<td>密码</td>
+			<td>审核状态</td>
+			<td>操作</td>
 		</tr>
-		<%
-			String color = "";
-			int c = 1;
-		%>
+
 		<c:forEach items="${userLists}" var="x">
-			<%
-				if (c == 1) {
-						color = "#ffffff";
-						c = 0;
-					} else {
-						color = "#f5f5f5";
-						c = 1;
-					}
-			%>
+
 			<tr>
-				<td bgcolor="#FFFFFF"><div align="center">${x.id}</div></td>
-				<td bgcolor="#FFFFFF">
-					<div align="center">${x.name}</div>
-				</td>
-				<td bgcolor="#FFFFFF">
-					<div align="center">********</div>
-				</td>
+				<td>${x.id}</td>
+				<td>${x.name}</td>
+				<td>********</td>
 				<c:if test="${x.state == 1}">
-					<td bgcolor="#FFFFFF"><div align="center">通过</div></td>
+					<td>通过</td>
 				</c:if>
 				<c:if test="${x.state == 0}">
-					<td bgcolor="#FFFFFF"><div align="center">未通过</div></td>
+					<td>未通过</td>
 				</c:if>
-
-				<td bgcolor="#FFFFFF"><div align="center">
-						[<a
-							href="javascript:void _delete('deleteuser.jspa?userid=${x.id}','此用户')">删除</a>]
-						[<a href="checkuser?userid=${x.id}">审核</a>]
-					</div>
+				<td><a class="btn btn-default"
+					href="javascript:void _delete('deleteuser.jspa?userid=${x.id}','此用户')">删除</a>
+					<a class="btn btn-default"
+					href="checkuser?userid=${x.id}">审核</a></td>
 			</tr>
+			
 		</c:forEach>
 	</table>
 

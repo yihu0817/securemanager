@@ -5,18 +5,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>用户注册</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script
+	src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div align="center" >
-		<h2><a href="login">返回登录界面</a></h2>
+	<div>
+
+		<a href="login">返回登录</a>
+
 		<h3>用户注册</h3>
-		<form action="register_submit" method="POST">
-			用户名: <input type="text" name="name" /><br> 
-			密      码: <input type="password" name="password" /><br><br> 
-			<input type="submit" value="提交">
-			<br>
-			${message }
+
+		<form role="form" action="register_submit" method="POST">
+			<div class="form-group">
+				<label>用户名:</label><input type="text" name="name" class="form-control"/>
+			</div>
+			<div class="form-group">
+				<label>密&nbsp;&nbsp;码:</label> <input type="password" name="password" class="form-control"/>
+			</div>
+			<input type="submit" value="提交" class="btn btn-default"> ${message }
 		</form>
 	</div>
-</body>
 </html>

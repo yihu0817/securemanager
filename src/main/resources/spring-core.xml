@@ -48,7 +48,7 @@
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.format_sql">true</prop>
 				<!-- <prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop> -->
 			</props>
@@ -79,7 +79,7 @@
 
 	<aop:config>
 		<aop:pointcut
-			expression="execution(* com.ittx.java1608.secure.service.impl.*.*(..))"
+			expression="execution(* com.ittx.java1608.secure.dao.impl.*.*(..))"
 			id="mypointcut" />
 		<aop:advisor advice-ref="trasactionAdvice" pointcut-ref="mypointcut" />
 	</aop:config>

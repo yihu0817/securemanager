@@ -92,4 +92,10 @@ public class SecureImpl extends MyHibernateDaoSupport implements SecureDao {
 		getHibernateTemplate().update(role);
 	}
 
+	@Override
+	public void updateModuleById(Module module) {
+		getHibernateTemplate().update(module);
+		
+	}
+
 }

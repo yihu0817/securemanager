@@ -13,6 +13,7 @@ public interface SecureDao {
 	public Module getModuleById(int id);
 	public List<Module> getModuleAll();
 	public void deleteModule(Module module);
+	public void updateModuleById(Module module);
 	
 	public void addFunction(Function function);
 	public List<Function> getAllFunction();
