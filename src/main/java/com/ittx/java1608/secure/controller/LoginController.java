@@ -17,6 +17,7 @@ import com.ittx.java1608.secure.model.User;
 import com.ittx.java1608.secure.service.SecureService;
 import com.ittx.java1608.secure.service.UserService;
 import com.ittx.java1608.secure.utils.Configes;
+import com.ittx.java1608.secure.utils.MD5;
 
 @Controller
 public class LoginController {
@@ -43,7 +44,8 @@ public class LoginController {
 	// @RequestMapping(value="/login_submit",method=RequestMethod.GET)
 	@PostMapping("/login_submit")
 	public String loginSubmit(HttpServletRequest req,String name, String password, Model model) {
-		User user = userService.checkUser(name, password);
+		String psw = MD5.md5crypt(password);
+		User user = userService.checkUser(name, psw);
 		if (user != null) {
 			if (user.getState() == Configes.CHECK_STATE_NO) {
 				model.addAttribute("message", "正在审核中!");
@@ -67,6 +69,8 @@ public class LoginController {
 
 	@PostMapping("/register_submit")
 	public String regesiterSubmit(User user, Model model) {
+		String passWord = MD5.md5crypt(user.getPassword());
+		user.setPassword(passWord);
 		userService.addUser(user);
 		model.addAttribute("message", "注册成功，等待审核！");
 		return "user/register";

@@ -19,7 +19,8 @@
 	<mvc:resources mapping="/static/css/**" location="/static/css/" />
 	<mvc:resources mapping="/static/js/**" location="/static/js/" />
 	<mvc:resources mapping="/static/images/**" location="/static/images/" />
-
+	<mvc:resources mapping="/static/bootstrap/**" location="/static/bootstrap/" />
+	
 	<!-- ViewResolver 视图解析器 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
