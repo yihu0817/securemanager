@@ -5,6 +5,7 @@ import org.junit.Test;
 public class MD5Test {
 	private String s = "abcd12";
 
+	
 	@Test
 	public void testMd5crypt() {
 		String ms = MD5.md5crypt(s);
@@ -28,4 +29,6 @@ public class MD5Test {
 		String decodeStr = new String(org.apache.commons.codec.binary.Base64.decodeBase64(encoderStr));
 		System.out.println("decodeStr :"+decodeStr);
 	}
+	
+	
 }
